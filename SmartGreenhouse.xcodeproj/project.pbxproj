@@ -12,6 +12,12 @@
 		833924DC221346E6001A00F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833924DA221346E6001A00F8 /* Main.storyboard */; };
 		833924DE221346EC001A00F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833924DD221346EC001A00F8 /* Assets.xcassets */; };
 		833924E1221346EC001A00F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833924DF221346EC001A00F8 /* LaunchScreen.storyboard */; };
+		833924EE2213493E001A00F8 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924ED2213493E001A00F8 /* loginScreen.swift */; };
+		833924F12213643D001A00F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F02213643D001A00F8 /* Constants.swift */; };
+		833924F322137907001A00F8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F222137907001A00F8 /* RoundedButton.swift */; };
+		833924F5221389E6001A00F8 /* signUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F4221389E6001A00F8 /* signUpScreen.swift */; };
+		833924F722138A11001A00F8 /* PlantMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F622138A11001A00F8 /* PlantMenu.swift */; };
+		833924F922138A24001A00F8 /* PlantProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F822138A24001A00F8 /* PlantProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,13 @@
 		833924DD221346EC001A00F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		833924E0221346EC001A00F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		833924E2221346EC001A00F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833924ED2213493E001A00F8 /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
+		833924EF22134C7D001A00F8 /* SmartGreenhouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartGreenhouse.entitlements; sourceTree = "<group>"; };
+		833924F02213643D001A00F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		833924F222137907001A00F8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		833924F4221389E6001A00F8 /* signUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpScreen.swift; sourceTree = "<group>"; };
+		833924F622138A11001A00F8 /* PlantMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMenu.swift; sourceTree = "<group>"; };
+		833924F822138A24001A00F8 /* PlantProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +67,12 @@
 		833924D5221346E6001A00F8 /* SmartGreenhouse */ = {
 			isa = PBXGroup;
 			children = (
+				833924EF22134C7D001A00F8 /* SmartGreenhouse.entitlements */,
+				833924EC221347A1001A00F8 /* Utilities */,
+				833924EB22134784001A00F8 /* Pictures */,
+				833924EA22134760001A00F8 /* Controller */,
+				833924E922134759001A00F8 /* View */,
+				833924E822134750001A00F8 /* Model */,
 				833924D6221346E6001A00F8 /* AppDelegate.swift */,
 				833924D8221346E6001A00F8 /* ViewController.swift */,
 				833924DA221346E6001A00F8 /* Main.storyboard */,
@@ -62,6 +81,47 @@
 				833924E2221346EC001A00F8 /* Info.plist */,
 			);
 			path = SmartGreenhouse;
+			sourceTree = "<group>";
+		};
+		833924E822134750001A00F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		833924E922134759001A00F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				833924F222137907001A00F8 /* RoundedButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		833924EA22134760001A00F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833924ED2213493E001A00F8 /* loginScreen.swift */,
+				833924F4221389E6001A00F8 /* signUpScreen.swift */,
+				833924F622138A11001A00F8 /* PlantMenu.swift */,
+				833924F822138A24001A00F8 /* PlantProfile.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		833924EB22134784001A00F8 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pictures;
+			sourceTree = "<group>";
+		};
+		833924EC221347A1001A00F8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				833924F02213643D001A00F8 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +156,11 @@
 				TargetAttributes = {
 					833924D2221346E5001A00F8 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,8 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833924F722138A11001A00F8 /* PlantMenu.swift in Sources */,
+				833924EE2213493E001A00F8 /* loginScreen.swift in Sources */,
+				833924F322137907001A00F8 /* RoundedButton.swift in Sources */,
 				833924D9221346E6001A00F8 /* ViewController.swift in Sources */,
 				833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */,
+				833924F922138A24001A00F8 /* PlantProfile.swift in Sources */,
+				833924F12213643D001A00F8 /* Constants.swift in Sources */,
+				833924F5221389E6001A00F8 /* signUpScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,16 +353,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartGreenhouse/SmartGreenhouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7589SML3ZP;
 				INFOPLIST_FILE = SmartGreenhouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wh.SmartGreenhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,16 +373,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartGreenhouse/SmartGreenhouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7589SML3ZP;
 				INFOPLIST_FILE = SmartGreenhouse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wh.SmartGreenhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
