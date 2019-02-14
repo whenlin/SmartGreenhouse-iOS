@@ -21,13 +21,14 @@ class signUpScreen: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var invalidPassword: UILabel!
     @IBOutlet weak var invalidConfirmPassword: UILabel!
     
+    //Properties
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         self.hideKeyboardWhenTappedAround() //hides keyboard
         
-        self.signUpBtn.isEnabled = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
@@ -35,19 +36,38 @@ class signUpScreen: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signUpBtnClicked(_ sender: Any) {
+     func signUpClicked() {
         
-        self.sendUserCredentials(completion: <#T##CompletionHandler##CompletionHandler##(Bool) -> ()#>)
-        
+        if(!(userEmail.text!.isEmpty) && (passwordField.text!.elementsEqual(confirmPassword.text!))){
+            var user = UserInfoToSend()
+            user.username = userEmail.text!
+            user.password = passwordField.text!
+            
+            sendUserInfo(theUser: user){
+                (success) in
+                if success {
+                    print("Worked!")
+                } else {
+                    print("Failed!")
+                }
+            }
+        } else if(userEmail.text!.isEmpty){
+            //when email field is empty
+            
+        } else if(passwordField.text != confirmPassword.text){
+            //when passwords dont match
+            
+        }
     }
     
-//    func textFieldDidChange(_ textField: UITextField) {
-//        if textField == self.confirmPassword {          //enables the signup btn if confirm password box has text, disables otherwise
-//
-//            self.signUpBtn.isEnabled = !confirmPassword.text!.isEmpty
-//            self.signUpBtn.isHidden = confirmPassword.text!.isEmpty
-//        }
-//    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if textField == self.confirmPassword {          //enables the signup btn if confirm password box has text, disables otherwise
+
+            self.signUpBtn.isEnabled = !confirmPassword.text!.isEmpty
+            self.signUpBtn.isHidden = confirmPassword.text!.isEmpty
+        }
+    }
     
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(self.dismissKeyboard))
@@ -76,38 +96,52 @@ class signUpScreen: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func sendUserCredentials(completion: @escaping CompletionHandler) {
-        let jsonURL = URL_SIGNUP
-        let url = URL(string: jsonURL)
+    @IBAction func unwindTologinScreen(segue: UIStoryboardSegue) {
+        print("Unwinding to Login Screen")
+        signUpClicked()
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
+    
+    func sendUserInfo(theUser: UserInfoToSend,completion: @escaping CompletionHandler){
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "smart-greenhouse-rest-api-whenlin.c9users.io"
+        urlComponents.port = 8080
+        urlComponents.path = "/createUser"
+        guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
-        let task = URLSession.shared.dataTask(with: url!) {(data, response, error ) in
+        // Specify this request as being a POST method
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // Make sure that we include headers specifying that our request's HTTP body
+        // will be JSON encoded
+        var headers = request.allHTTPHeaderFields ?? [:]
+        headers["Content-Type"] = "application/json"
+        request.allHTTPHeaderFields = headers
         
-            guard error == nil else {
-                print("returned error")
-                return
-            }
-            
-            guard let content = data else {
-                print("No data")
-                return
-            }
-            
-            guard let json = (try? JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String: Any] else {
-                print("Not containing JSON")
-                return
-            }
-        
-            if let array = json["message"] as? [String] {
-                print(array)
-            }
-            
-            DispatchQueue.main.async {
-                
-            }
+        // Now let's encode out Post struct into JSON data...
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(theUser)
+            // ... and set our request's HTTP body
+            request.httpBody = jsonData
+            print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        } catch {
+            completion(error as! Bool)
         }
         
+        // Create and run a URLSession data task with our JSON encoded POST request
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+            guard responseError == nil else {
+                completion(responseError! as! Bool)
+                return
+            }
+        }
         task.resume()
-        
     }
+    
+    
 
 }
