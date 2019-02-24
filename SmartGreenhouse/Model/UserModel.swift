@@ -12,3 +12,7 @@ struct UserInfoToSend: Encodable {
     var username: String!
     var password: String!
 }
+
+struct UserLoginResult: Decodable {
+    var result: String!
+}

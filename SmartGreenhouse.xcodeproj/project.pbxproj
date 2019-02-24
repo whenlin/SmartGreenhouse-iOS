@@ -19,6 +19,7 @@
 		833924F722138A11001A00F8 /* PlantMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F622138A11001A00F8 /* PlantMenu.swift */; };
 		833924F922138A24001A00F8 /* PlantProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F822138A24001A00F8 /* PlantProfile.swift */; };
 		837C3F9B2214AB47009B9C68 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C3F9A2214AB47009B9C68 /* UserModel.swift */; };
+		837C3F9D221A3339009B9C68 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C3F9C221A3339009B9C68 /* PlantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		833924F622138A11001A00F8 /* PlantMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMenu.swift; sourceTree = "<group>"; };
 		833924F822138A24001A00F8 /* PlantProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProfile.swift; sourceTree = "<group>"; };
 		837C3F9A2214AB47009B9C68 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		837C3F9C221A3339009B9C68 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				837C3F9A2214AB47009B9C68 /* UserModel.swift */,
+				837C3F9C221A3339009B9C68 /* PlantModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				833924F722138A11001A00F8 /* PlantMenu.swift in Sources */,
 				833924EE2213493E001A00F8 /* loginScreen.swift in Sources */,
 				833924F322137907001A00F8 /* RoundedButton.swift in Sources */,
+				837C3F9D221A3339009B9C68 /* PlantModel.swift in Sources */,
 				833924D9221346E6001A00F8 /* ViewController.swift in Sources */,
 				833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */,
 				833924F922138A24001A00F8 /* PlantProfile.swift in Sources */,
