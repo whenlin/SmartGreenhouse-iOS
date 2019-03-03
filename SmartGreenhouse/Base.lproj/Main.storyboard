@@ -87,10 +87,18 @@
                                     <action selector="signUpBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pm2-5V-Bg7"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email or password is incorrect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doS-U0-Cws">
+                                <rect key="frame" x="35" y="529" width="305" height="23"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.071770324506625793" blue="0.089654526661709477" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.084724564651545542" alpha="0.5993953339041096" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ypY-gH-WBo" firstAttribute="width" secondItem="nq2-Ca-Cw0" secondAttribute="width" id="8EL-TW-v0Q"/>
+                            <constraint firstItem="doS-U0-Cws" firstAttribute="top" secondItem="TcN-Jg-HvI" secondAttribute="bottom" constant="30" id="9hi-SZ-5BY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="doS-U0-Cws" secondAttribute="trailing" constant="35" id="A9J-Dv-8ke"/>
                             <constraint firstItem="tDT-WR-54h" firstAttribute="width" secondItem="ypY-gH-WBo" secondAttribute="width" id="APW-ig-dNr"/>
                             <constraint firstItem="ypY-gH-WBo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cgr-db-vj7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TcN-Jg-HvI" secondAttribute="trailing" constant="35" id="F12-wn-mxv"/>
@@ -103,14 +111,17 @@
                             <constraint firstItem="TcN-Jg-HvI" firstAttribute="top" secondItem="nq2-Ca-Cw0" secondAttribute="bottom" constant="36" id="VBP-Nr-uz1"/>
                             <constraint firstItem="ENp-WF-cWO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XMK-cQ-F8G"/>
                             <constraint firstItem="XJl-d7-3nf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ceL-JV-tib"/>
+                            <constraint firstItem="doS-U0-Cws" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gNs-uB-bG2"/>
                             <constraint firstItem="ENp-WF-cWO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jQ5-y7-nRK"/>
                             <constraint firstItem="nq2-Ca-Cw0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="liF-ob-vsa"/>
                             <constraint firstItem="nq2-Ca-Cw0" firstAttribute="top" secondItem="ypY-gH-WBo" secondAttribute="bottom" constant="36" id="loV-we-lYz"/>
                             <constraint firstItem="ypY-gH-WBo" firstAttribute="top" secondItem="tDT-WR-54h" secondAttribute="bottom" constant="35" id="p7R-LL-Sib"/>
+                            <constraint firstItem="doS-U0-Cws" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="yH7-B8-mLv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="failedLoginLabel" destination="doS-U0-Cws" id="cnE-2b-jK6"/>
                         <outlet property="password" destination="ypY-gH-WBo" id="nQH-u5-K5r"/>
                         <outlet property="userName" destination="tDT-WR-54h" id="0sX-is-lov"/>
                         <segue destination="nGe-dH-KOg" kind="show" identifier="toSignUp" id="A8r-Li-w6P"/>
@@ -174,7 +185,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantCell" rowHeight="101" id="6Su-aC-Xn4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantCell" rowHeight="101" id="6Su-aC-Xn4" customClass="PlantCell" customModule="SmartGreenhouse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Su-aC-Xn4" id="LY5-a8-Y85">
@@ -193,6 +204,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="plantName" destination="tgg-mi-wNF" id="N6y-9e-it9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -210,6 +224,7 @@
                         <viewLayoutGuide key="safeArea" id="QFK-MX-pNY"/>
                     </view>
                     <connections>
+                        <outlet property="listOfPlants" destination="3ym-x0-gZ6" id="IkX-Ud-ixr"/>
                         <segue destination="rB9-eF-UTE" kind="show" identifier="toPlantProfile" id="Ksv-I0-0sa"/>
                     </connections>
                 </viewController>

@@ -12,9 +12,9 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 //URL Constants
 let BASE_URL = "https://smart-greenhouse-rest-api-whenlin.c9users.io/"
-let URL_GETBARS = "\(BASE_URL)bars/"
-let URL_GETREVIEWS = "\(BASE_URL)reviews/"
-let URL_GETALLREVIEWS = "\(BASE_URL)allReviews/"
+let URL_GETPLANTS = "\(BASE_URL)listPlants/"
+//let URL_GETREVIEWS = "\(BASE_URL)reviews/"
+//let URL_GETALLREVIEWS = "\(BASE_URL)allReviews/"
 let URL_SIGNUP = "\(BASE_URL)createUser/"
 let URL_LOGIN = "\(BASE_URL)signIn/"
 

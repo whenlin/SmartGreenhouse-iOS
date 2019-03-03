@@ -16,6 +16,9 @@ class loginScreen: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var failedLoginLabel: UILabel!
+    
+    
     var loginSuccessful = false //boolean to keep track of whether login was successful or not
     
     override func viewDidLoad() {
@@ -47,7 +50,7 @@ class loginScreen: UIViewController {
         let keyboardFrame = keyboardSize.cgRectValue
         
         if self.view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= keyboardFrame.height
+            self.view.frame.origin.y -= keyboardFrame.height - 56
         }
         
     }
@@ -61,6 +64,26 @@ class loginScreen: UIViewController {
     
     @IBAction func loginBtnClicked(_ sender: Any) {
         
+        failedLoginLabel.isHidden = true
+        
+        var userInfo = UserInfoToSend()
+        userInfo.username = userName.text
+        userInfo.password = password.text
+        
+        loginSuccessful = sendLoginInfo(theUser: userInfo){
+            (success) in
+            if (success != nil) {
+                print(success as Any)
+            } else {
+                print("Login Failed!")
+            }
+        }
+        
+        if loginSuccessful {
+            performSegue(withIdentifier: "toPlantMenu", sender: self)
+        } else {
+            failedLoginLabel.isHidden = false
+        }
     }
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
@@ -109,24 +132,24 @@ class loginScreen: UIViewController {
             }
             
             // APIs usually respond with the data you just sent in your POST request
-            //        if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-            //            print("response: ", utf8Representation)
-            //        } else {
-            //            print("no readable data received in response")
-            //        }
-            //
-            //        guard let barRatings = try? JSONDecoder().decode(RatingsFromServer.self, from: responseData!) else {
-            //            print("Error: Couldn't decode data into Ratings array")
-            //            return
-            //        }
+                    if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
+                        print("response: ", utf8Representation)
+                    } else {
+                        print("no readable data received in response")
+                    }
+            
+                    guard let loginResult = try? JSONDecoder().decode(UserLoginResult.self, from: responseData!) else {
+                        print("Error: Couldn't decode data into Ratings array")
+                        return
+                    }
+            
+            let userResult = loginResult.result
+            
+            if userResult == "Success" {
+                self.loginSuccessful = true
+            }
+            
         }
-        
-        /*
-         
-         IN THE ABOVE STATEMENTS, INSERT CODE THAT WILL READ WHETHER RESPONSE IS SUCCESSFUL OR NOT
-         IF RESPONSE IS SUCCESSFUL, CHANGE BOOL RESULT TO TRUE, ELSE MAKE IT FALSE
-         
-         */
         
         task.resume()
         
