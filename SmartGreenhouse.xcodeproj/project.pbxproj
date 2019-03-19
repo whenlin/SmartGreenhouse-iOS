@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83316660222B33810073A618 /* PlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331665F222B33810073A618 /* PlantCell.swift */; };
 		833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924D6221346E6001A00F8 /* AppDelegate.swift */; };
 		833924D9221346E6001A00F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924D8221346E6001A00F8 /* ViewController.swift */; };
 		833924DC221346E6001A00F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 833924DA221346E6001A00F8 /* Main.storyboard */; };
@@ -18,11 +19,13 @@
 		833924F5221389E6001A00F8 /* signUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F4221389E6001A00F8 /* signUpScreen.swift */; };
 		833924F722138A11001A00F8 /* PlantMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F622138A11001A00F8 /* PlantMenu.swift */; };
 		833924F922138A24001A00F8 /* PlantProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924F822138A24001A00F8 /* PlantProfile.swift */; };
+		83636AC9224151F7000982E4 /* PlantSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83636AC8224151F7000982E4 /* PlantSettingsVC.swift */; };
 		837C3F9B2214AB47009B9C68 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C3F9A2214AB47009B9C68 /* UserModel.swift */; };
 		837C3F9D221A3339009B9C68 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C3F9C221A3339009B9C68 /* PlantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8331665F222B33810073A618 /* PlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCell.swift; sourceTree = "<group>"; };
 		833924D3221346E6001A00F8 /* SmartGreenhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartGreenhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		833924D6221346E6001A00F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		833924D8221346E6001A00F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		833924F4221389E6001A00F8 /* signUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpScreen.swift; sourceTree = "<group>"; };
 		833924F622138A11001A00F8 /* PlantMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantMenu.swift; sourceTree = "<group>"; };
 		833924F822138A24001A00F8 /* PlantProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantProfile.swift; sourceTree = "<group>"; };
+		83636AC8224151F7000982E4 /* PlantSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSettingsVC.swift; sourceTree = "<group>"; };
 		837C3F9A2214AB47009B9C68 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		837C3F9C221A3339009B9C68 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				833924F222137907001A00F8 /* RoundedButton.swift */,
+				8331665F222B33810073A618 /* PlantCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				833924F4221389E6001A00F8 /* signUpScreen.swift */,
 				833924F622138A11001A00F8 /* PlantMenu.swift */,
 				833924F822138A24001A00F8 /* PlantProfile.swift */,
+				83636AC8224151F7000982E4 /* PlantSettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,10 +216,12 @@
 				833924EE2213493E001A00F8 /* loginScreen.swift in Sources */,
 				833924F322137907001A00F8 /* RoundedButton.swift in Sources */,
 				837C3F9D221A3339009B9C68 /* PlantModel.swift in Sources */,
+				83316660222B33810073A618 /* PlantCell.swift in Sources */,
 				833924D9221346E6001A00F8 /* ViewController.swift in Sources */,
 				833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */,
 				833924F922138A24001A00F8 /* PlantProfile.swift in Sources */,
 				833924F12213643D001A00F8 /* Constants.swift in Sources */,
+				83636AC9224151F7000982E4 /* PlantSettingsVC.swift in Sources */,
 				837C3F9B2214AB47009B9C68 /* UserModel.swift in Sources */,
 				833924F5221389E6001A00F8 /* signUpScreen.swift in Sources */,
 			);

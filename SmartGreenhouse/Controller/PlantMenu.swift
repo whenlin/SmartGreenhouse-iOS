@@ -81,7 +81,6 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 } else {
                     plantIDtoAdd = index
                     self.tableData.append(Plant(_id: plantIDtoAdd, plantName: plantNameToAdd))
-                    
                 }
                 
                 counter+=1
@@ -123,7 +122,7 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let plant = self.getTableData()[indexPath.row]
-      //  performSegue(withIdentifier: "BarRatingVC", sender: bar)
+        performSegue(withIdentifier: "toPlantProfile", sender: plant)
     }
     
     
@@ -132,6 +131,12 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if let plantProfiles = segue.destination as? PlantProfile{
+            assert(sender as? Plant != nil)
+            //var info = Plant(_id: <#T##String#>, plantName: <#T##String#>)
+            plantProfiles.initPlantProfile(plant: sender as! Plant)
+        }
+        
     }
  
 

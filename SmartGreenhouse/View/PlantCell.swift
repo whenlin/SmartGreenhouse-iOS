@@ -11,9 +11,11 @@ import UIKit
 class PlantCell: UITableViewCell {
 
     @IBOutlet weak var plantName: UILabel!
+    var plantID: String!
     
     func updateViews(plant: Plant){
         plantName.text = plant.plantName
+        plantID = plant.id
     }
 
 }

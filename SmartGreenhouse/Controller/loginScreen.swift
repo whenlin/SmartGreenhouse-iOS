@@ -70,14 +70,18 @@ class loginScreen: UIViewController {
         userInfo.username = userName.text
         userInfo.password = password.text
         
-        loginSuccessful = sendLoginInfo(theUser: userInfo){
-            (success) in
-            if (success != nil) {
-                print(success as Any)
-            } else {
-                print("Login Failed!")
-            }
-        }
+        //THE BLOCK BELOW IS COMMENTED OUT TEMPORARILY TO WORK ON PLANT MENU ETC
+        //REMEMBER TO UNCOMMENT THE BLOCK
+//        loginSuccessful = sendLoginInfo(theUser: userInfo){
+//            (success) in
+//            if (success != nil) {
+//                print(success as Any)
+//            } else {
+//                print("Login Failed!")
+//            }
+//        }
+        
+        loginSuccessful = true //THIS LINE SHOULD BE REMOVED WHEN THE ABOVE BLOCK IS UNCOMMENTED
         
         if loginSuccessful {
             performSegue(withIdentifier: "toPlantMenu", sender: self)
