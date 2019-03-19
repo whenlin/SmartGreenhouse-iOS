@@ -11,7 +11,6 @@ import UIKit
 class PlantProfile: UIViewController {
 
     //Outlets
-    
     @IBOutlet weak var plantNameLabel: UILabel!
     
     @IBOutlet weak var plantImage: UIImageView!
@@ -30,15 +29,38 @@ class PlantProfile: UIViewController {
         super.viewDidLoad()
         
         plantNameLabel.text = plantName
+        
+        self.fetchPlantInfo() {
+            (error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            } else {
+                print("Success!!!")
+            }
+        }
     }
     
-    func initPlantProfile(plant: Plant){ //initializes the VC's info
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.fetchPlantInfo() {
+            (error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            } else {
+                print("Success!!!")
+            }
+        }
+    }
+    
+    func initPlantProfile(plant: Plant){ //initializes this VC's info
         plantName = plant.plantName
         plantID = plant.id
     }
     
     @IBAction func changeSettingsBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toPlantSettings", sender: self)
+        let plant = Plant(_id: plantID, plantName: plantName)
+        performSegue(withIdentifier: "toPlantSettings", sender: plant)
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
@@ -48,7 +70,7 @@ class PlantProfile: UIViewController {
     func fetchPlantInfo(completion:((Error?) -> Void)?) {
         
         var urlComponents = URLComponents()     //should change this IP ADDRESS TO RASPBERRY PI'S
-        urlComponents.scheme = "https"
+        urlComponents.scheme = "https"  //change to http when going to the pi
         urlComponents.host = "smart-greenhouse-rest-api-whenlin.c9users.io"
         urlComponents.port = 8080
         urlComponents.path = "/retrievePlantInfo/" + plantID
@@ -85,10 +107,9 @@ class PlantProfile: UIViewController {
                 return
             }
             
-            
-            
             DispatchQueue.main.async {
-               // self.listOfReviews.reloadData()
+                self.temperatureLabel.text = plantInfo.currentTemperature
+                self.lightLabel.text = plantInfo.currentLight
             }
             
         }
@@ -96,15 +117,15 @@ class PlantProfile: UIViewController {
         
     }
     
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let plantSettings = segue.destination as? PlantSettingsVC{
+            assert(sender as? Plant != nil)
+            plantSettings.initSettingsVC(plant: sender as! Plant)
+        }
     }
-    */
+ 
 
 }

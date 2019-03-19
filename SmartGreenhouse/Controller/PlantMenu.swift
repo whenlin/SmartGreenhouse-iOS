@@ -113,7 +113,7 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCell") as? PlantCell{
             let plant_ = self.getTableData()[indexPath.row]
-            cell.updateViews(plant: plant_)  //updates plant names only at the moment
+            cell.updateViews(plant: plant_)
             return cell
         } else {
             return PlantCell()
@@ -129,11 +129,9 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
         if let plantProfiles = segue.destination as? PlantProfile{
             assert(sender as? Plant != nil)
-            //var info = Plant(_id: <#T##String#>, plantName: <#T##String#>)
             plantProfiles.initPlantProfile(plant: sender as! Plant)
         }
         

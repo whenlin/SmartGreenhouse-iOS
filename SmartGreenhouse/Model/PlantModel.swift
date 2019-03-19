@@ -22,6 +22,22 @@ struct PlantInfo: Encodable, Decodable{
     var minLight: String!
     var currentLight: String!
     var maxLight: String //the light setting that the user set from their mobile app
+    
+    init(){
+        
+        self._id = " "
+        self.plantName = " ";
+        self.plantType = " ";
+        self.minTemperature = "N/A";
+        self.currentTemperature = "N/A";
+        self.maxTemperature = "N/A";
+        self.minMoisture = "N/A";
+        self.currentMoisture = "N/A";
+        self.maxMoisture = "N/A";
+        self.minLight = "N/A";
+        self.currentLight = "N/A";
+        self.maxLight = "N/A";
+    }
 }
 
 class Plant {
