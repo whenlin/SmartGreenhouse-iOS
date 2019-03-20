@@ -430,14 +430,39 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eM0-SE-TJc">
+                                        <rect key="frame" x="20" y="17.5" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Mnw-E5-OKr"/>
+                                            <constraint firstAttribute="width" constant="45" id="btc-LI-UdL"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-back-filled-50"/>
+                                        <connections>
+                                            <action selector="backBtnClicked:" destination="rB9-eF-UTE" eventType="touchUpInside" id="ECK-Yq-SnQ"/>
+                                            <action selector="backBtnClicked:" destination="i8s-cP-ff8" eventType="touchUpInside" id="iVF-Za-zH2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.41727311639999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="7c7-IF-XbD"/>
                                     <constraint firstItem="91a-8I-Atg" firstAttribute="centerX" secondItem="iot-1a-Esa" secondAttribute="centerX" id="Bte-9B-frA"/>
                                     <constraint firstItem="91a-8I-Atg" firstAttribute="centerY" secondItem="iot-1a-Esa" secondAttribute="centerY" id="E5X-HG-QIM"/>
+                                    <constraint firstItem="eM0-SE-TJc" firstAttribute="leading" secondItem="iot-1a-Esa" secondAttribute="leading" constant="20" id="J6i-8a-cg5"/>
+                                    <constraint firstItem="eM0-SE-TJc" firstAttribute="centerY" secondItem="iot-1a-Esa" secondAttribute="centerY" id="V2P-2h-D4F"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-Pm-s6X">
+                                <rect key="frame" x="10" y="311" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="35I-Hx-2rt"/>
+                                    <constraint firstAttribute="height" constant="45" id="lir-vc-ZdY"/>
+                                </constraints>
+                                <state key="normal" image="icons8-back-filled-50"/>
+                                <connections>
+                                    <action selector="backBtnClicked:" destination="rB9-eF-UTE" eventType="touchUpInside" id="RJe-lg-gsR"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBa-aa-P7Y">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <subviews>
@@ -538,6 +563,7 @@
                             <constraint firstItem="rTe-lJ-ZRk" firstAttribute="bottom" secondItem="CBa-aa-P7Y" secondAttribute="bottom" id="6jE-W7-WKt"/>
                             <constraint firstItem="CBa-aa-P7Y" firstAttribute="top" secondItem="iot-1a-Esa" secondAttribute="bottom" id="D80-ff-jMM"/>
                             <constraint firstItem="iot-1a-Esa" firstAttribute="leading" secondItem="UyC-rT-Di1" secondAttribute="leading" id="DkT-PA-Nur"/>
+                            <constraint firstItem="jfr-Pm-s6X" firstAttribute="centerY" secondItem="UyC-rT-Di1" secondAttribute="centerY" id="Y71-M1-Zgk"/>
                             <constraint firstItem="rTe-lJ-ZRk" firstAttribute="trailing" secondItem="iot-1a-Esa" secondAttribute="trailing" id="b1U-LJ-b7u"/>
                             <constraint firstItem="rTe-lJ-ZRk" firstAttribute="trailing" secondItem="CBa-aa-P7Y" secondAttribute="trailing" id="kR8-v2-g9U"/>
                             <constraint firstItem="CBa-aa-P7Y" firstAttribute="leading" secondItem="rTe-lJ-ZRk" secondAttribute="leading" id="l3i-wf-iX6"/>

@@ -29,6 +29,7 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         self.lightLevelsInput.delegate = self
         self.lightLevelsInput.dataSource = self
         
+         self.hideKeyboardWhenTappedAround() //FUNCTION THAT HIDES KEYBOARD WHEN ANY OTHER VIEW IS TOUCHED
        
         plantName.text = plantName_
         lightLevels = ["0","1","2","3","4","5"]
@@ -49,10 +50,25 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         self.plantInfo.currentTemperature = " "
     }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     func initSettingsVC(plant: Plant){
         //self.plant = plant
         self.plantName_ = plant.plantName
         self.plantID = plant.id
+    }
+    
+    
+    @IBAction func backBtnClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     
