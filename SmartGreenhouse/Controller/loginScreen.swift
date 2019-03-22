@@ -91,7 +91,7 @@ class loginScreen: UIViewController {
     }
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toSignUp", sender: self)
+            self.performSegue(withIdentifier: "toSignUp", sender: nil)
     }
     
     @IBAction func unwindTologinScreen(segue:UIStoryboardSegue) { }

@@ -36,6 +36,11 @@ class signUpScreen: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func backBtnClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
      func signUpClicked() {
         
         if(!(userEmail.text!.isEmpty) && (passwordField.text!.elementsEqual(confirmPassword.text!))){

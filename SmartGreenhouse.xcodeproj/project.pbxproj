@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83078FFF2242DBF1001E768B /* AddPlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83078FFE2242DBF1001E768B /* AddPlantVC.swift */; };
 		83316660222B33810073A618 /* PlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331665F222B33810073A618 /* PlantCell.swift */; };
 		833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924D6221346E6001A00F8 /* AppDelegate.swift */; };
 		833924D9221346E6001A00F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833924D8221346E6001A00F8 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83078FFE2242DBF1001E768B /* AddPlantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantVC.swift; sourceTree = "<group>"; };
 		8331665F222B33810073A618 /* PlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantCell.swift; sourceTree = "<group>"; };
 		833924D3221346E6001A00F8 /* SmartGreenhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartGreenhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		833924D6221346E6001A00F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				833924F622138A11001A00F8 /* PlantMenu.swift */,
 				833924F822138A24001A00F8 /* PlantProfile.swift */,
 				83636AC8224151F7000982E4 /* PlantSettingsVC.swift */,
+				83078FFE2242DBF1001E768B /* AddPlantVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				833924EE2213493E001A00F8 /* loginScreen.swift in Sources */,
 				833924F322137907001A00F8 /* RoundedButton.swift in Sources */,
 				837C3F9D221A3339009B9C68 /* PlantModel.swift in Sources */,
+				83078FFF2242DBF1001E768B /* AddPlantVC.swift in Sources */,
 				83316660222B33810073A618 /* PlantCell.swift in Sources */,
 				833924D9221346E6001A00F8 /* ViewController.swift in Sources */,
 				833924D7221346E6001A00F8 /* AppDelegate.swift in Sources */,

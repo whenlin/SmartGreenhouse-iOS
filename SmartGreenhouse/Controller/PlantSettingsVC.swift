@@ -76,7 +76,7 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         let text = temperatureTextField.text
         let tempValue = Int(text!)
         
-        if tempValue! < 0 || tempValue! > 100 {
+        if tempValue! < 0 || tempValue! > 40 {
             self.temperatureWarning.isHidden = false
         } else {
             self.temperatureWarning.isHidden = true
@@ -127,9 +127,9 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     func sendPlantInfo(plantInfo: PlantInfo, completion:((Error?) -> Void)?){
         
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "smart-greenhouse-rest-api-whenlin.c9users.io"
-        urlComponents.port = 8080
+        urlComponents.scheme = "http"
+        urlComponents.host = "172.20.10.2"      //192.168.2.20
+        urlComponents.port = 3000
         urlComponents.path = "/updatePlantInfo/" + plantID
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         

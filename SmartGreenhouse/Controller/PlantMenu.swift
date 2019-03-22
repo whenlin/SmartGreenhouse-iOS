@@ -25,9 +25,14 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
         listOfPlants.dataSource = self
         listOfPlants.delegate = self
         
-        self.tableData = getPlantList()
+       // self.tableData = getPlantList()
+        self.tableData = getPlants()
         
-        
+    }
+    
+    
+    @IBAction func addPlantBtnClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toAddPlants", sender: self)
     }
     
     func getPlantList() -> [Plant] {  //gets data from api then returns array
@@ -41,6 +46,16 @@ class PlantMenu: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 print("Failed!")
             }
         }
+        return tableData
+    }
+    
+    func getPlants() -> [Plant] {
+        
+        let plant = Plant(_id: "5c7af2458fc5ab12a77a5ed6", plantName: "Delilah")
+        var array = [Plant]()
+        array.append(plant)
+        tableData = array
+        
         return tableData
     }
     
