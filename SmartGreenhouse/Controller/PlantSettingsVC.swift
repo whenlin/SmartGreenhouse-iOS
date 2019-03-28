@@ -127,9 +127,10 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     func sendPlantInfo(plantInfo: PlantInfo, completion:((Error?) -> Void)?){
         
         var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = "172.20.10.2"      //192.168.2.20
-        urlComponents.port = 3000
+        urlComponents.scheme = "https"
+        urlComponents.host =    "smart-greenhouse-rest-api-whenlin.c9users.io"
+        //"172.20.10.2"      //192.168.2.20
+        urlComponents.port = 8080
         urlComponents.path = "/updatePlantInfo/" + plantID
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
@@ -166,15 +167,5 @@ class PlantSettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

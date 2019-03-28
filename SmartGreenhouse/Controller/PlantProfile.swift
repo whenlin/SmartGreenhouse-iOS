@@ -70,9 +70,10 @@ class PlantProfile: UIViewController {
     func fetchPlantInfo(completion:((Error?) -> Void)?) {
         
         var urlComponents = URLComponents()     //should change this IP ADDRESS TO RASPBERRY PI'S
-        urlComponents.scheme = "http"  //change to http when going to the pi
-        urlComponents.host = "172.20.10.2"    //"192.168.2.20" //change to pi IP address
-        urlComponents.port = 3000
+        urlComponents.scheme = "https"  //change to http when going to the pi
+        urlComponents.host =  "smart-greenhouse-rest-api-whenlin.c9users.io"
+        //"172.20.10.2"    //"192.168.2.20" //change to pi IP address
+        urlComponents.port = 8080
         urlComponents.path = "/retrievePlantInfo/" + plantID
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
